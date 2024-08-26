@@ -1,0 +1,137 @@
+*{
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+  position: fixed;
+  background-color: rgba(98, 163, 144, 0.9); 
+  width:100%;
+  height:7%;
+}
+.heads{
+  position: relative;
+  top: 25%;
+  padding: 3px 10px;
+  background-color: transparent;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: transparent;
+  font-size: 100%;
+  font-weight: 500;
+  text-decoration:none;
+  color: black;
+}
+#home{
+  left:3%; 
+}
+#more{
+  left:6%;
+}
+#profile{
+  position: absolute;
+  left: 85%;
+  top: 10%;
+  width: auto;
+  height: 80%;
+  border-radius: 50%;
+}
+
+#tributeHead{
+  position: absolute;
+  left: 50%;
+}
+.tributeHeadPic{
+  position: absolute;
+  left: 43%;
+  top: 10%;
+  width: auto;
+  height: 80%;
+  border-radius: 3%;
+}
+body{
+  background: url("background.jpg");
+  background-size: cover;
+  margin: auto;
+ }
+ #subtext{
+  font-size: 170%;
+  font-weight: 2;
+}
+ #body{
+  text-align: center;
+  margin: 0% 20% 0% 20%;
+  background-color: rgba(87, 138, 123, 0.9);
+  background: linear-gradient(135deg, rgba(87, 138, 123, 0.9),rgba(87, 128, 138, 0.9) );
+  padding: 3vw 2vw 7vw 2vw;
+ }
+/*#pic{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+}*/
+#image{
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  /*padding-top: 3% */
+  border-radius: 50%;
+  }
+
+  #tribute-info{
+    margin: auto;
+    text-align: left;
+  }
+#about{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  font-weight: 300;
+}
+/*#list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#about{
+  grid-column: 2/3;
+  align-self:center;
+  background-color: red;
+}*/
+#footnote{
+  position: relative;
+  top: 8vw;
+}
+footer{
+  background-color: rgba(87, 128, 138, 0.9); 
+  padding-bottom:2%;
+}
+.footIcon{
+  position: relative;
+  top: 4.5vh;
+  left:6vw;
+  margin-right: 3vw; 
+}
+#copyrite{
+  font-size:small;
+  margin-left: 35%;
+}
+#footnote{
+  color: black;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+/*main page*/
+
+
+
+#fig-caption-mainPage{
+  color: black;
+  text-decoration: none;
+}
+#subtext{
+  text-decoration: none;
+  color: black;
+}
