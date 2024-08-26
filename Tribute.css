@@ -59,6 +59,9 @@ body{
   font-size: 170%;
   font-weight: 2;
 }
+#subtext:hover{
+  text-decoration: underline;
+}
  #body{
   text-align: center;
   margin: 0% 20% 0% 20%;
