@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ewuraa's Bespoke Yarns</title>
+        <link rel="stylesheet" href="Landing.css" >
+        <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/clothes-svgrepo-com.svg">
+    </head>
+
+    <body>
+        <div id="landingPage"></div>
+        <header id = "header">
+        <a href="index.html" id="logoAndName">
+           <img id ="logo" src ="assets/clothes-svgrepo-com.svg" alt="Logo">
+            <span id="name">Ewuraa's Bespoke Yarns</span>
+        </a>
+        <nav id ="nav-bar">
+            <section id="desktopMenu">
+
+                <div class="navLinkAndDropdown">
+                    <a id="clothing" class = "nav-link" href="productCategories.html" onclick="fillIn(clothing)">CLOTHING</a>
+                    <ul class="dropdown">
+                        <li id = "shirts" class="dropLinks firstDropLink"><a href="productPage.html" onclick="fillIn(shirts)">SHIRTS</a></li>
+                        <li id = "trousers" class="dropLinks"><a href="productPage.html" onclick="fillIn(trousers)">TROUSERS</a></li>
+                        <li id = "dresses" class="dropLinks lastDropLink"><a href="productPage.html" onclick="fillIn(dresses)">DRESSES</a></li>
+                    </ul>
+                </div>
+                <div class="navLinkAndDropdown">
+                    <a id= "footwear" class = "nav-link" href="productCategories.html" onclick="fillIn(footwear)">FOOTWEAR</a>
+                    <ul class="dropdown">
+                        <li id = "sneakers" class="dropLinks firstDropLink"><a href="productPage.html" onclick="fillIn(sneakers)">SNEAKERS</a></li>
+                        <li id = "heels" class="dropLinks"><a href="productPage.html" onclick="fillIn(heels)">HEELS</a></li>
+                        <li id = "officeShoes" class="dropLinks"><a href="productPage.html" onclick="fillIn(officeShoes)">OFFICE SHOES</a></li>
+                        <li id = "sandals" class="dropLinks lastDropLink"><a href="productPage.html" onclick="fillIn(sandals)">SANDALS</a></li>
+                    </ul>
+                </div>
+                <div class="navLinkAndDropdown">
+                    <a id="jewellery" class = "nav-link" href="productCategories.html" onclick="fillIn(jewellery)">JEWELLERY</a>
+                    <ul class="dropdown">
+                        <li id = "necklaces" class="dropLinks firstDropLink"><a href="productPage.html" onclick="fillIn(necklaces)">NECKLACES</a></li>
+                        <li id = "bracelets" class="dropLinks"><a href="productPage.html" onclick="fillIn(bracelets)">BRACELETS</a></li>
+                        <li id = "rings" class="dropLinks"><a href="productPage.html" onclick="fillIn(rings)">RINGS</a></li>
+                        <li id = "others" class="dropLinks lastDropLink"><a href="productPage.html" onclick="fillIn(others)">OTHERS</a></li>
+                    </ul>
+                </div>
+                <div class="navLinkAndDropdown">
+                    <a id="crochet" class = "nav-link" href="productCategories.html" onclick="fillIn(crochet)">CROCHET</a>
+                    <ul class="dropdown">
+                        <li id = "swimwear" class="dropLinks firstDropLink"><a href="productPage.html" onclick="fillIn(others)">SWIMWEAR</a></li>
+                        <li id = "bags" class="dropLinks"><a href="productPage.html" onclick="fillIn(others)">BAGS</a></li>
+                        <li id = "topAndSkirts" class="dropLinks lastDropLink"><a href="productPage.html" onclick="fillIn(others)">TOP & SKIRTS</a></li>
+                    </ul>
+                </div>
+                <div class="navLinkAndDropdown">
+                    <a id="customize" class = "nav-link" href="productCategories.html" onclick="fillIn(customize)">CUSTOMIZE</a>
+                </div>
+
+            </section>
+            
+            <section id="navSVGs">
+                <div class="navLinkAndDropdown">
+                    <a href="#"><img class="navLinkSVG" src="/assets/shopping-cart-free-15-svgrepo-com.svg" alt="See my Shopping Cart"></a>
+                </div>
+                <div class="navLinkAndDropdown">
+                    <a href="#" onclick="changeTheme()"><img class="navLinkSVG" src="/assets/account-avatar-man-svgrepo-com.svg" alt="Log into my account/Account Details"></a>
+                </div>
+            </section>
+
+            
+        </nav>
+
+        <div id="mobileMenu">
+            <a href="#"><img class="navLinkSVG" src="assets/menu-svgrepo-com.svg" alt="Log into my account/Account Details"></a>
+        </div>
+    </header>
+
+        <div class="carousel " ><!-- onmouseover="stopWheeling()" onmouseout="continueWheeling() "-->
+            <div id="scaleDiv"><div class="carousel-inner">
+                <div class="carousel-item one">
+                    <h1 id="heading">IMAGINE LIFE WITH FANTASTIC CLOTHING</h1>
+                </div>
+
+                <div class="carousel-item two">
+                    <h1 id="heading">IMAGINE LIFE WITH FANTASTIC FOOTWEAR</h1>
+                </div>
+
+                <div class="carousel-item three">
+                    <h1 id="heading">RUSH!! COME AND BUY EWURAA'S THINGS</h1>
+                </div>
+            </div></div>
+            <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button><!-- looks like these numbers are code for the arrows "<"" and ">" -->
+            <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+            <button id="shopButton"><a href = "#middle">Shop Now!</a></button>
+        </div>
+        <br><br>
+        
+        <main>
+            <div id="middle" class=""><br><br><br><br><br><br>
+                <a href = "productCategories.html" class ="services">
+                    <div id="iconContainer"><img class="icon" src="assets/clothes-svgrepo-com.svg" alt="Buy Clothes"></div>
+                    <div class="servicesText"><h2>Buy the highest quality clothes for cheap</h2>
+                    <p>We guarantee amazing quality at a <em>reasonably</em> cheap cost!</p>
+                    </div>
+                </a>
+                <a href = "productCategories.html" class ="services">
+                    <div id="iconContainer"><img class="icon" src="assets/measuring-tape-svgrepo-com.svg" alt="Customize Outfit"></div>
+                    <div class="servicesText"><h2>Get a customized outfit</h2>
+                    <p>Clothes can be bent to your every whim and desire. For an appropriate price, of course.</p>
+                    </div id="iconContainer">
+                </a>
+                <a href = "productCategories.html" class ="services">
+                    <div id="iconContainer"><img class="icon" src="assets/knitting-fabric-svgrepo-com.svg" alt="Crocheting services"></div>
+                    <div class="servicesText">
+                        <h2>Order a crocheted outfit</h2>
+                        <p>Place an order for a custom crocheted outfit, at the low low cost of your soul!</p>
+                    </div>
+                </a>
+            </div>
+            <br><br>
+    
+            <div class="four">
+                <h1 id="heading">CUSTOMIZE YOUR SELECTION FOR AN EVENT</h1>
+                <!-- <form id="form" action="https://www.freecodecamp.com/email-submit">
+                    <input id="email" name="email" type="email" placeholder="Enter your email address" required>
+                    <br><br><input id="submit" type="submit" value="GET STARTED">
+                </form> -->
+            </div><br><br>
+            <div id="cardHeading"><h1 id="cardHead">HOT SALES SELECTION</h1></div>
+            <div id="cards" >
+                
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="itemContainer"><img id="item" src="assets/clothes-svgrepo-com.svg"alt="item"></div>
+                    <div id="itemInfo">
+                        <p class="cardHead">One service</p>
+                        <p class="price">Someamount</p>
+                        <p class="cardContent">Get this<br>And this<br>This too!<br>Finally this</p>
+                        <button class="select" type="menu">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        
+
+        
+        
+    <footer>
+        <div id="socials">
+            <a class="socialIcon"><img src="assets/icon-instagram.svg" alt="Instagram page"></a>
+            <a class="socialIcon"><img src="assets/tiktok-svgrepo-com.svg" alt="Tik-tok page"></a>
+            <a class="socialIcon"><img src="assets/icon-facebook.svg" alt="Facebook page"></a>
+        </div>
+
+        <div id="footlinks">
+            <a class="footlink" href="#">Privacy</a>
+            <a class="footlink" href="#">Terms</a>
+            <a class="footlink" href="#">Contact</a>
+            <p id="copyright">&copy;Copyright 2025, Shiva Otchere</p>
+        </div>
+    </footer>
+    <script src="landing.js"></script>
+
+</body>
+
+    
+
+
+
+</html>
