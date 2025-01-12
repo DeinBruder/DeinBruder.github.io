@@ -216,7 +216,7 @@ function checkCookies(){
     else{
         changeTheme(1);
         localStorage.setItem("themeCount",1);
-        document.cookie=localStorage.getItem("1");
+        document.cookie="1";
     }
 }
 
