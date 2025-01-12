@@ -268,12 +268,12 @@ function saveTheme(){
 
 }
 function checkCookies(){
-    if (document.cookie=="1"){
+    if (document.cookie=="5"){
         changeTheme(localStorage.getItem("themeCount"));
     }
     else{
-        changeTheme(1);
-        localStorage.setItem("themeCount",1);
+        changeTheme(5);
+        localStorage.setItem("themeCount",5);
         document.cookie=localStorage.getItem("themeCount");
     }
 }
