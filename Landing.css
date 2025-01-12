@@ -742,8 +742,8 @@ footer{
         background-color:var(--deepTheme);
         position: absolute;
         top: 80px;
-        left: 60%;
-        width: 40%;
+        right: 0%;
+        width: 50%;
         height: 300%;
         animation: translateX 300ms ease-in-out forwards;/* growDown rotateX downOut rotateY growDown slideDown translateX */
         transform-origin: top center;
