@@ -32,34 +32,24 @@ function prevSlide() {
 
 
 
-/* Attempting to make the running of slideshow function exclusive to the main page only */
-/* const landingPage = document.querySelector("#landingPage");
 
-if(landingPage.getAttribute("id")=="landingPage")
-    {
-    console.log("yes");
-    let ourdef = setInterval(
+let landingPage = document.querySelector('#landingPage');
+/* create time interval to start slideshow. works for landing page only. */
+if (landingPage){
+    landingPage.onload = setInterval(
     function(){
         nextSlide();
     },3000
-)
+);
 }
 else{
-    console.log("no");
-} */
+    landingPage=false;
+}
 
 
 
 
-
-/* create time interval to start slideshow */
-let ourdef = setInterval(
-    function(){
-        nextSlide();
-    },3000
-)
-
-/* stop slideshow when mouse hovers on element */
+/* stop slideshow when mouse hovers on element. Obsoleted*/
 
 function stopWheeling(){
     clearInterval(ourdef);
@@ -72,6 +62,7 @@ function continueWheeling(){
     
         return;
 }
+
 
 /* Tried to animate drop-down menu items individually */
 /* function animateIndividuals(){
@@ -105,7 +96,7 @@ function doIt(){
 
 
 
-/* AI insight on how to do the dropdown function above */
+/* AI insight on how to do the dropdown function above. still gives some errors */
 /* function showDropDown(event) { // Rename the parameter to 'event'
     //Crucial change:  Get the selector string from a data attribute.
     let dropDownSelector = event.currentTarget.dataset.target;
@@ -161,7 +152,7 @@ function hideDesktopMenu(){
     return;
 }
 
-/*function to show or hide nav menu depending on click for mobile layout */
+/*function to show or hide nav menu on click for mobile layout */
 
 function showMenu(){
     if(desktopMenu.style.display=="none" && desktopMenu.style.visibility=="hidden") 
@@ -295,27 +286,27 @@ function checkCookies(){
 let nameOfInterest="";
 let cardHead = document.querySelector("#cardHead");
 function fillIn(id){
-    nameOfInterest = id.innerText;
+    nameOfInterest = id.textContent;
     localStorage.setItem("nameOfInterest",nameOfInterest);
-    console.log(id)
+    localStorage.setItem("id",`${id}`);
 }
 
 /* function for updating the titles of individual product pages on loading */
 function updateHeads(){
     console.log("started and not cleared. See localStorage below");
     console.log(localStorage.getItem("nameOfInterest"));
+    console.log(localStorage.getItem("id"));
 
     if(localStorage.getItem("nameOfInterest")=="cleared"){
         console.log("did not set cardHead")
     }else{
         cardHead.innerText=localStorage.getItem("nameOfInterest");
-    localStorage.setItem("nameOfInterest","cleared");
+        localStorage.setItem("nameOfInterest","cleared");
         console.log("loaded and cleared. See localStorage below");
         console.log(localStorage.getItem("nameOfInterest"));
 
     }
 }
-
 
 
 /* add event listene to check viewport size and display proper nav menu */
@@ -324,11 +315,11 @@ window.addEventListener("resize", updateType);
 /* add event listener to display nav menu on button click. For mobile view */
 mobileMenu.addEventListener("click", showMenu);
 
-
+const body =document.querySelector("body");
 /* select theme to display upon loading page, update page heading/titles where applicable */
-window.onload = function(){
+body.onload = function(){
     updateType(); /*to make sure page doesn't show menu by default for mobile devices. seems resize event listener doesn't detect starting screen size, only when screen is resized   */
     checkCookies();
     updateHeads();
-    console.log("js onload has run");
+    console.log("js onload has run"); 
 };
