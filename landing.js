@@ -243,7 +243,18 @@ function blueTheme(){
     return;
 
 }
+function darkTheme(){
+    root.style.setProperty("--bodyColour","rgb(39, 38, 37)");
+    root.style.setProperty("--deepTheme","rgb(44, 44, 44)");
+    root.style.setProperty("--lightTheme","rgb(68, 68, 68)");
+    root.style.setProperty("--lightTextColour", "rgb(190, 190, 190)");
+    root.style.setProperty("--deepTextColour","rgb(170, 170, 170)");
+    root.style.setProperty("--lightHover","rgba(114, 114, 114, 0.88)");
+    root.style.setProperty("--cardBodyColour","rgb(75, 74, 73)");
+    root.style.setProperty("--cardHeadColour", "rgb(20, 20, 20)");
+    return;
 
+}
 
 
 
@@ -255,6 +266,7 @@ function changeTheme(count){
     else if (count==2){redPinkTheme();}
     else if (count==3){blueTheme();}
     else if (count==4){whiteTheme();}
+    else if (count==5){darkTheme();}
     else{count=1;changeTheme(count);}
     counter=count;
     localStorage.setItem("themeCount", count);
