@@ -35,6 +35,43 @@
     src: url(fonts/Cabin_Sketch/CabinSketch-Regular.ttf) format(truetype);
 }
 :root{
+    /* Gold Theme */
+  /*   --bodyColour: rgb(39, 38, 37);
+    --deepTheme:rgb(241, 155, 26);
+    --lightTheme:rgb(226, 179, 98);
+    --lightTextColour:white;
+    --deepTextColour:rgb(201, 146, 63);
+    --lightHover: rgba(255, 219, 143, 0.884);
+    --cardBodyColour: var(--bodyColour);
+    --cardHeadColour: var(--deepTheme); */
+
+    /* Red-Pink Theme */
+    /* --bodyColour:rgb(204, 107, 107);
+    --deepTheme:rgb(109, 63, 52);
+    --lightTheme:rgb(201, 63, 63);
+    --lightTextColour:white;
+    --deepTextColour:rgb(201, 63, 63);
+    --lightHover: rgba(221, 174, 174, 0.884);
+    --cardBodyColour: rgb(145, 62, 62);
+    --cardHeadColour: rgb(75, 42, 42); */
+    /* Blue Theme */
+    /* --bodyColour:rgb(94, 180, 176);
+    --deepTheme:rgb(52, 100, 109);
+    --lightTheme:rgb(63, 173, 201);
+    --lightTextColour:white;
+    --deepTextColour:rgb(63, 146, 201);
+    --lightHover: rgba(233, 232, 255, 0.884);
+    --cardBodyColour: rgb(62, 112, 145);
+    --cardHeadColour: rgb(57, 90, 110); */
+    /* White Theme */
+    /* --bodyColour:rgb(255, 255, 255);
+    --deepTheme:rgb(0, 0, 0);
+    --lightTheme:rgb(173, 173, 173);
+    --lightTextColour:rgb(255, 255, 255);
+    --deepTextColour:rgb(68, 68, 68);
+    --lightHover: rgba(105, 102, 91, 0.884);
+    --cardBodyColour: rgb(100, 100, 100);
+    --cardHeadColour: rgb(44, 44, 44); */
 }
 html{
     scroll-behavior: smooth;
@@ -83,8 +120,8 @@ body{
     padding: 0px;
 }
 #logo{
-    height: auto;
-    width:10%;
+    height: 20%;
+    width:20%;
 }
 #name{
     font-weight: bolder;
@@ -599,7 +636,7 @@ video{
 footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
     background: linear-gradient(90deg, var(--lightTheme), var(--deepTheme))/* var(--bodyColour) */;
     margin-top: 3em;
@@ -607,24 +644,32 @@ footer{
     border-top-left-radius: 15px;
 }
 #socials{
-    padding: 2em 12.5% 0.5em 12.5%;
+    width: fit-content;
+    margin-left: 2em; 
+    padding: 0; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .socialIcon{
     margin: 1em;
-    padding: 1em;
+    padding: 0.4em;
+    transition: background-color 150ms ease-in;
 }
 .socialIcon:hover{
     cursor: pointer;
-    height: 1em;
-    width: auto;
+    background-color: var(--lightHover);
 }
 #footlinks{
+    width: fit-content;
     padding-top: 1em;
-    margin: 0 12.5% 0 0;
+    margin: 0 6% 0 0;
     text-align: right;
+
 }
 .footlink{
-    padding: 1em;
+    margin-top: 1em;
     transition: background-color 150ms ease-in;
 }
 .footlink:hover{
@@ -650,11 +695,22 @@ footer{
         width: 70%;
     }
     #nav-bar{
-        width: 20%;
+        width: 40%;
         justify-content: flex-end;
+    }
+    .navLinkSVG{
+        transform: scale(1.4);
     }
     #navSVGs{
         width: 100%;
+    }
+    #mobileMenu{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        visibility: visible;
+        flex-direction: row;
+        justify-content: center;
     }
     #desktopMenu{/* 
         display: none;
@@ -676,30 +732,24 @@ footer{
         right: 100%;
         width: 100%;
     }
-    #mobileMenu{
-        width: 10%;
-        height: 100%;
-        display: flex;
-        visibility: visible;
-        flex-direction: row;
-        justify-content: center;
-    }
     #shopButton{
         height: 2.4em; 
     } 
     .cards{
         width: 100%;
     }
-   #footlink{
+    /* #socials{
+        width: fit-content;
+    }  */
+  /*   .socialIcon{
         margin: 0;
-        padding: 0;
-    }
-    #footlinks{
-        padding: 0 0 0 0;
-        margin: 2em 12.5% 0 0;
-        text-align: right;
-    }
-    /*  #socials{
-        margin: 2em;
     } */
+    /* #footlinks{
+        width: fit-content;
+    } */
+   /* .footlink{
+        margin: 1em 2em;
+        padding: 0;
+    } */
+    /**/
 }

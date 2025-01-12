@@ -1,4 +1,3 @@
-/* function for slideshow on main page */
 let currentIndex = 0;
 
 function showSlide(index) {
@@ -32,8 +31,8 @@ function prevSlide() {
 
 
 
-/* Attempting to make the running of slideshow function exclusive to the main page only */
-/* const landingPage = document.querySelector("#landingPage");
+
+const landingPage = document.querySelector("#landingPage");
 
 if(landingPage.getAttribute("id")=="landingPage")
     {
@@ -46,21 +45,18 @@ if(landingPage.getAttribute("id")=="landingPage")
 }
 else{
     console.log("no");
-} */
+}
 
 
 
 
 
-/* create time interval to start slideshow */
+
 let ourdef = setInterval(
     function(){
         nextSlide();
     },3000
 )
-
-/* stop slideshow when mouse hovers on element */
-
 function stopWheeling(){
     clearInterval(ourdef);
 }
@@ -73,7 +69,6 @@ function continueWheeling(){
         return;
 }
 
-/* Tried to animate drop-down menu items individually */
 /* function animateIndividuals(){
     var x;
     for(x=1;x<4;x++){
@@ -88,33 +83,18 @@ function continueWheeling(){
 animateIndividuals() */
 
 
-
-/* function to show desktop nav menu layout */
 const desktopMenu=document.querySelector("#desktopMenu");
 const mobileMenu=document.querySelector("#mobileMenu");
-
-function showDesktopMenu(){
-    desktopMenu.style.display="flex";
-    desktopMenu.style.visibility="visible";
-    return;
-}
-
-/* function to hide desktop nav menu layout */
-function hideDesktopMenu(){
-    desktopMenu.style.display="none";
-    desktopMenu.style.visibility="hidden";
-    return;
-}
-
-/*function to show or hide nav menu depending on click for mobile layout */
 
 function showMenu(){
     if(desktopMenu.style.display=="none" && desktopMenu.style.visibility=="hidden") 
         {
-        showDesktopMenu();
+        desktopMenu.style.display="flex";
+        desktopMenu.style.visibility="visible";
     }
     else{
-        hideDesktopMenu();
+        desktopMenu.style.display="none";
+        desktopMenu.style.visibility="hidden";
     }
     
     return;
@@ -124,9 +104,24 @@ function showMenu(){
 
 
 
-/* function to check screen size and show appropriate nav menu layout */
-const mediaQuery = window.matchMedia('(max-width: 800px)');
+function showDesktopMenu(){
+    desktopMenu.style.display="flex";
+    desktopMenu.style.visibility="visible";
+    return;
+}
+
+
+function hideDesktopMenu(){
+    desktopMenu.style.display="none";
+    desktopMenu.style.visibility="hidden";
+    return;
+}
+
+
+
+
 function updateType(){
+    const mediaQuery = window.matchMedia('(max-width: 800px)');
     if (mediaQuery.matches) {
         hideDesktopMenu();
     } 
@@ -137,7 +132,7 @@ function updateType(){
 
     
 
-/* functions to set global variables for setting theme */
+
 const root = document.documentElement;
 
 function goldTheme(){
@@ -192,39 +187,23 @@ function blueTheme(){
 
 
 
-/* function to change theme on button press. commented code needs more work, trying to make themeCount persist between pages */
-let counter;
-function changeTheme(count){
-    /* themeCount=localStorage.getItem("themeCount"); */
-    if(count==1){goldTheme();}
-    else if (count==2){redPinkTheme();}
-    else if (count==3){blueTheme();}
-    else if (count==4){whiteTheme();}
-    else{count=1;changeTheme(count);}
-    counter=count;
-    localStorage.setItem("themeCount", count);
-}
-function saveTheme(){
-    counter++;
-    localStorage.setItem("themeCount", counter);
 
-}
-function checkCookies(){
-    if (document.cookie=="1"){
-        changeTheme(localStorage.getItem("themeCount"));
-    }
-    else{
-        changeTheme(1);
-        localStorage.setItem("themeCount",1);
-        document.cookie=localStorage.getItem("1");
-    }
+let themeCount=1;
+function changeTheme(){
+    if(themeCount==1){goldTheme();}
+    else if (themeCount==2){redPinkTheme();}
+    else if (themeCount==3){blueTheme();}
+    else if (themeCount==4){whiteTheme();}
+    else{themeCount=1;changeTheme();}
+    themeCount++;
 }
 
 
 
 
 
-  /* function for saving the name of selected nav menu item into localStorage */
+
+
 let nameOfInterest="";
 let cardHead = document.querySelector("#cardHead");
 function fillIn(id){
@@ -233,7 +212,7 @@ function fillIn(id){
     console.log(id)
 }
 
-/* function for updating the titles of individual product pages on loading */
+
 function updateHeads(){
     console.log("started and not cleared. See localStorage below");
     console.log(localStorage.getItem("nameOfInterest"));
@@ -251,17 +230,13 @@ function updateHeads(){
 
 
 
-/* add event listene to check viewport size and display proper nav menu */
+
 window.addEventListener("resize", updateType);
+mobileMenu.addEventListener("click", showMenu)
 
-/* add event listener to display nav menu on button click. For mobile view */
-mobileMenu.addEventListener("click", showMenu);
-
-
-/* select theme to display upon loading page, update page heading/titles where applicable */
 window.onload = function(){
-    updateType(); /*to make sure page doesn't show menu by default for mobile devices. seems resize event listener doesn't detect starting screen size, only when screen is resized   */
-    checkCookies();
+    updateType();
+    changeTheme();
     updateHeads();
     console.log("js onload has run");
 };
