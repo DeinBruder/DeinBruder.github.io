@@ -88,6 +88,17 @@ function continueWheeling(){
 animateIndividuals() */
 
 
+/* function to show dropdown menu on clicking arrow. for mobile layout */
+let dropDown=document.querySelector(".dropdown");
+let showMore=document.querySelector("#showMore");
+function showDropDown(){
+    dropDown.style.display="block";
+    dropDown.style.display="visible";
+}
+/* add event listener to trigger dropDown function */
+showMore.addEventListener("click",showDropDown);
+
+
 
 /* function to show desktop nav menu layout */
 const desktopMenu=document.querySelector("#desktopMenu");
@@ -216,7 +227,7 @@ function checkCookies(){
     else{
         changeTheme(1);
         localStorage.setItem("themeCount",1);
-        document.cookie="1";
+        document.cookie=localStorage.getItem("themeCount");
     }
 }
 

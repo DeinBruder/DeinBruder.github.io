@@ -158,6 +158,20 @@ body{
 .navLinkAndDropdown:hover>ul{
     display: block;
 }
+#showMore{
+    position:absolute;
+    right: 0%;
+    width: 20%;
+    padding: 1em;
+    border: none;
+    background-color: var(--lightTheme);
+    color: var(--lightTextColour);
+    display: none;
+    visibility: none;
+}
+#showMore:hover{
+    cursor: pointer;
+}
 a, ul>a{
     padding: 10%;
     text-decoration: none;
@@ -697,6 +711,15 @@ footer{
     #nav-bar{
         width: 40%;
         justify-content: flex-end;
+    }.navLinkAndDropdown:hover>ul{
+        display: none;
+    }
+    #showMore{
+        display: block;
+        visibility: visible;
+    }
+    #showMore:focus+ul{
+       display: block;
     }
     .navLinkSVG{
         transform: scale(1.4);
