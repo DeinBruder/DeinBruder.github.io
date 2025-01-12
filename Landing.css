@@ -711,8 +711,6 @@ footer{
     #nav-bar{
         width: 40%;
         justify-content: flex-end;
-    }.navLinkAndDropdown:hover>ul{
-        display: none;
     }
     #showMore{
         display: block;

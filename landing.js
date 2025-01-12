@@ -88,15 +88,59 @@ function continueWheeling(){
 animateIndividuals() */
 
 
-/* function to show dropdown menu on clicking arrow. for mobile layout */
-let dropDown=document.querySelector(".dropdown");
+/* functions to show dropdown menu on clicking arrow. for mobile layout */
 let showMore=document.querySelector("#showMore");
-function showDropDown(){
+let dropDown="";
+function showDropDown(thing){
+    /* dropDown=document.querySelector(JSON.stringify(thing)); *//* `${thing}` */
+    dropDown=document.querySelector(thing);
+    showMore.addEventListener("click",doIt);
+}
+function doIt(){
     dropDown.style.display="block";
     dropDown.style.display="visible";
 }
 /* add event listener to trigger dropDown function */
-showMore.addEventListener("click",showDropDown);
+/* showMore.addEventListener("click",showDropDown(dropClass));  */
+
+
+
+/* AI insight on how to do the dropdown function above */
+/* function showDropDown(event) { // Rename the parameter to 'event'
+    //Crucial change:  Get the selector string from a data attribute.
+    let dropDownSelector = event.currentTarget.dataset.target;
+
+
+    if (dropDownSelector) {
+        let dropDown = document.querySelector(dropDownSelector);
+        if (dropDown) { // Check if the element was found
+            dropDown.style.display = "block";
+            dropDown.style.visibility = "visible";
+        } else {
+            console.error("Element not found:", dropDownSelector);
+        }
+    } else {
+        console.error("Data attribute 'data-target' not found on the 'showMore' element.");
+    }
+
+}
+
+//Get the showMore element
+const showMore = document.querySelector("#showMore");
+
+//Crucial change: Add data-target to your showMore button (in your HTML)
+// Example: <button id="showMore" data-target="#myDropdown">Show More</button>
+//Replace #myDropdown with the actual ID of the element you want to show.
+
+if (showMore) {
+    showMore.addEventListener("click", showDropDown);
+} else {
+    console.error("Element with ID 'showMore' not found in the DOM.");
+}
+ */
+
+
+
 
 
 
