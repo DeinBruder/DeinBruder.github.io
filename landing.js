@@ -285,29 +285,63 @@ function checkCookies(){
   /* function for saving the name of selected nav menu item into localStorage */
 let nameOfInterest="";
 let cardHead = document.querySelector("#cardHead");
+
+let shirts = document.querySelector('#shirts');
+let trousers = document.querySelector('#trousers');
+let dresses = document.querySelector('#dresses');
 function fillIn(id){
     nameOfInterest = id.textContent;
     localStorage.setItem("nameOfInterest",nameOfInterest);
-    localStorage.setItem("id",`${id}`);
 }
 
 /* function for updating the titles of individual product pages on loading */
 function updateHeads(){
-    console.log("started and not cleared. See localStorage below");
-    console.log(localStorage.getItem("nameOfInterest"));
-    console.log(localStorage.getItem("id"));
 
     if(localStorage.getItem("nameOfInterest")=="cleared"){
         console.log("did not set cardHead")
     }else{
         cardHead.innerText=localStorage.getItem("nameOfInterest");
-        localStorage.setItem("nameOfInterest","cleared");
-        console.log("loaded and cleared. See localStorage below");
-        console.log(localStorage.getItem("nameOfInterest"));
 
     }
 }
+/* function to populate product categories page*/
+function checkThrough(){
+    
+    console.log("started and not cleared. See localStorage below");
+    console.log(localStorage.getItem("nameOfInterest"));
+    let items=document.getElementsByClassName(/* "crochet" */localStorage.getItem("nameOfInterest" ).toLowerCase());
+    console.log(items);
 
+    let middle = document.querySelector("#middle");
+    for (let i in items){
+        if(items[i].textContent){
+            const lines = items[i].textContent.split('\n').map(line => line.trim()).filter(line => line !== '');
+
+            // Assign each line to an array using a for loop
+            const final = [];
+            for (let i = 0; i < lines.length; i++) {
+            final.push(lines[i]);
+            console.log(lines[i]);
+            middle.innerHTML+=`<a href = "productPage.html" class ="services" onclick = "fillIn(${lines[i].toLowerCase()})">
+                    <div><img class="icon" src="assets/clothes-svgrepo-com.svg" alt="Buy Clothes"></div>
+                    <div class="servicesText"><h2 class ="${lines[i]}">${lines[i]}</h2>
+                    <p>We guarantee amazing quality at a <em>reasonably</em> cheap cost!</p>
+                    </div>
+                </a>`;
+        }
+            }
+        else{
+            console.log("did not do anything");
+            continue;
+        }
+
+            
+    };
+    
+    localStorage.setItem("nameOfInterest","cleared");
+    console.log("loaded and cleared. See localStorage below");
+    console.log(localStorage.getItem("nameOfInterest"));
+}
 
 /* add event listene to check viewport size and display proper nav menu */
 window.addEventListener("resize", updateType);
@@ -321,5 +355,6 @@ body.onload = function(){
     updateType(); /*to make sure page doesn't show menu by default for mobile devices. seems resize event listener doesn't detect starting screen size, only when screen is resized   */
     checkCookies();
     updateHeads();
+    checkThrough();
     console.log("js onload has run"); 
 };

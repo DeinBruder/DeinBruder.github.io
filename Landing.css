@@ -34,6 +34,10 @@
     font-family: 'cabinSketch';
     src: url(fonts/Cabin_Sketch/CabinSketch-Regular.ttf) format(truetype);
 }
+@font-face {
+    font-family: 'paris';
+    src: url(fonts/Parisienne/Parisienne-Regular.ttf) format(truetype);
+}
 :root{
     /* Gold Theme */
   /*   --bodyColour: rgb(39, 38, 37);
@@ -76,14 +80,14 @@
 html{
     scroll-behavior: smooth;
 
+
 }
 
-#fillUp{
+
+html,body{
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-
-}
-body{
-    min-height: 100%;
     width: 100%;
     margin:0px;
     padding: 0px;
@@ -91,6 +95,10 @@ body{
     background: var(--bodyColour);
 
 }
+main{
+    flex-grow: 1;
+}
+
 
 #header{
     height: 80px;
@@ -125,6 +133,8 @@ body{
 }
 #name{
     font-weight: bolder;
+    font-family:'paris';
+    font-size: xx-large
 }
 
 
