@@ -200,11 +200,11 @@ function goldTheme(){
 }
 function redPinkTheme(){
     root.style.setProperty("--bodyColour","rgb(236, 194, 194)");
-    root.style.setProperty("--deepTheme","rgb(109, 63, 52)");
+    root.style.setProperty("--deepTheme","rgb(196, 45, 45)");
     root.style.setProperty("--lightTheme","rgb(201, 63, 63)");
     root.style.setProperty("--lightTextColour","white");
     root.style.setProperty("--deepTextColour","rgb(201, 63, 63)");
-    root.style.setProperty("--lightHover","rgba(221, 174, 174, 0.884)");
+    root.style.setProperty("--lightHover","rgba(223, 150, 150, 0.88)");
     root.style.setProperty("--cardBodyColour","rgb(182, 90, 90)");
     root.style.setProperty("--cardHeadColour", "rgb(131, 76, 76)");
     return;
@@ -246,6 +246,17 @@ function darkTheme(){
     return;
 
 }
+function roseGoldTheme(){
+    root.style.setProperty("--bodyColour","rgb(255, 208, 191)");
+    root.style.setProperty("--deepTheme","rgb(255, 180, 153)");
+    root.style.setProperty("--lightTheme","rgb(255, 180, 153)");
+    root.style.setProperty("--lightTextColour","white");
+    root.style.setProperty("--deepTextColour","rgb(255, 137, 94)");
+    root.style.setProperty("--lightHover","rgb(255, 200, 180)");
+    root.style.setProperty("--cardBodyColour","rgb(255, 175, 146)");
+    root.style.setProperty("--cardHeadColour", "rgb(255, 180, 153)");
+
+}
 
 
 
@@ -258,6 +269,7 @@ function changeTheme(count){
     else if (count==3){blueTheme();}
     else if (count==4){whiteTheme();}
     else if (count==5){darkTheme();}
+    else if (count==6){roseGoldTheme();}
     else{count=1;changeTheme(count);}
     counter=count;
     localStorage.setItem("themeCount", count);
