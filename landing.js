@@ -82,14 +82,38 @@ animateIndividuals() */
 /* functions to show dropdown menu on clicking arrow. for mobile layout */
 let showMore=document.querySelector("#showMore");
 let dropDown="";
-showMore.addEventListener("click",doIt);
+
+/* showMore.addEventListener("click",doIt); */
+
+
+// Event listener for dynamic dropdown control
+showMore.addEventListener("click", function() {
+    doIt();  /* showDropDown() is run from the html side and is needed for doIt() to work. Ideally should run first before doIt() runs */
+});
+
 function showDropDown(thing){
-    /* dropDown=document.querySelector(JSON.stringify(thing)); *//* `${thing}`*/
-    dropDown=document.querySelector(thing);
+    dropDown=document.querySelector(thing); /* save dropdown in question into variable */
+
+     // Close all other dropdowns first
+     let allDropDowns = document.querySelectorAll('.dropdown');
+     allDropDowns.forEach(menu => {
+         menu.style.display = 'none';  // Hide all other dropdowns
+     });
+ 
+     // Open the clicked dropdown
+     if (dropDown) {
+         dropDown.style.display = 'block';
+     }
 }
 function doIt(){
+    // Close all dropdowns first
+    let allDropDowns = document.querySelectorAll('.dropdown');  // select all dropdowns
+    allDropDowns.forEach(menu => {
+        menu.style.display = 'none';  // Close all dropdowns
+    });
     dropDown.style.display="block";
     dropDown.style.display="visible";
+    /*dropDown=""; reset dropdown variable so nothing stays open after clicking something else //not necessary*/
 }
 /* add event listener to trigger dropDown function */
 /* showMore.addEventListener("click",showDropDown(dropClass));  */

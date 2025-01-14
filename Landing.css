@@ -76,6 +76,7 @@
     --lightHover: rgba(105, 102, 91, 0.884);
     --cardBodyColour: rgb(100, 100, 100);
     --cardHeadColour: rgb(44, 44, 44); */
+    
 }
 html{
     scroll-behavior: smooth;
@@ -165,9 +166,7 @@ main{
 .navLinkAndDropdown:hover{
     background: var(--lightHover);
 }
-.navLinkAndDropdown:hover>ul{
-    display: block;
-}
+
 #showMore{
     position:absolute;
     right: 0%;
@@ -726,9 +725,7 @@ footer{
         display: block;
         visibility: visible;
     }
-    #showMore:focus+ul{
-       display: block;
-    }
+    
     .navLinkSVG{
         transform: scale(1.4);
     }
