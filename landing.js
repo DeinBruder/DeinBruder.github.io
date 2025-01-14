@@ -82,10 +82,10 @@ animateIndividuals() */
 /* functions to show dropdown menu on clicking arrow. for mobile layout */
 let showMore=document.querySelector("#showMore");
 let dropDown="";
+showMore.addEventListener("click",doIt);
 function showDropDown(thing){
-    /* dropDown=document.querySelector(JSON.stringify(thing)); *//* `${thing}` */
+    /* dropDown=document.querySelector(JSON.stringify(thing)); *//* `${thing}`*/
     dropDown=document.querySelector(thing);
-    showMore.addEventListener("click",doIt);
 }
 function doIt(){
     dropDown.style.display="block";
