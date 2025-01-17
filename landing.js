@@ -171,6 +171,10 @@ function showDesktopMenu(){
 
 /* function to hide desktop nav menu layout */
 function hideDesktopMenu(){
+    let allDropDowns = document.querySelectorAll('.dropdown');
+    allDropDowns.forEach(menu => {
+        menu.style.display = 'none';  // Hide all other dropdowns
+    });
     desktopMenu.style.display="none";
     desktopMenu.style.visibility="hidden";
     return;
