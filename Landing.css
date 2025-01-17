@@ -249,6 +249,9 @@ a{
     animation: rotateY 300ms ease-in-out forwards;
     transform-origin: top center;
 }
+.themes{
+    right: 0px;
+}
 /* .dropLinkAnimated{
     transform-origin: top center;
     animation: slideDown 300ms (num*60ms) ease-in-out forwards

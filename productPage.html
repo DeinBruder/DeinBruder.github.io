@@ -61,7 +61,15 @@
                     </ul>
                 </div>
                 <div class="navLinkAndDropdown">
-                    <a id="customize" class = "nav-link" href="productCategories.html" onclick="fillIn(customize)">CUSTOMIZE</a>
+                    <a href="#" onclick="saveTheme();changeTheme(localStorage.getItem('themeCount'));showDropDown('.themes')"><img class="navLinkSVG" src="assets/account-avatar-man-svgrepo-com.svg" alt="Log into my account/Account Details"></a>
+                    <ul class="themes dropdown">
+                        <li id = "darkgold" class="dropLinks firstDropLink"><a href ="#" onclick="goldTheme()">Darkgold Theme</a></li>
+                        <li id = "white" class="dropLinks"><a href ="#"  onclick="whiteTheme()">White Theme</a></li>
+                        <li id = "dark" class="dropLinks"><a href ="#"  onclick="darkTheme()">Dark Theme</a></li>
+                        <li id = "redpink" class="dropLinks "><a href ="#"  onclick="redPinkTheme()">RedPink Theme</a></li>
+                        <li id = "redpink" class="dropLinks "><a href ="#"  onclick="roseGoldTheme()">RoseGold Theme</a></li>
+                        <li id = "redpink" class="dropLinks lastDropLink"><a href ="#"  onclick="blueTheme()">Blue Theme</a></li>
+                    </ul>
                 </div>
 
             </section>
