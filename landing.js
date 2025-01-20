@@ -79,17 +79,11 @@ function continueWheeling(){
 animateIndividuals() */
 
 
-/* functions to show dropdown menu on clicking arrow. for mobile layout */
+/* functions to show dropdown menu on clicking arrow(for mobile layout)  or avatar(for both mobile and desktop). */
 let showMore=document.querySelector("#showMore");
 let dropDown="";
 
-/* showMore.addEventListener("click",doIt); */
 
-
-// Event listener for dynamic dropdown control
-showMore.addEventListener("click", function() {
-    doIt();  /* showDropDown() is run from the html side and is needed for doIt() to work. Ideally should run first before doIt() runs */
-});
 
 function showDropDown(thing){
     dropDown=document.querySelector(thing); /* save dropdown in question into variable */
@@ -101,59 +95,34 @@ function showDropDown(thing){
      });
  
      // Open the clicked dropdown
-     if (dropDown) {
-         dropDown.style.display = 'block';
+     if (dropDown.style.display == 'block') {
+        dropDown.style.display="none";
+        dropDown.style.display="hidden";
+        console.log("hid it");
+     }
+     else{
+        dropDown.style.display="block";
+        dropDown.style.display="visible";
+        console.log("displayed it");
      }
 }
-function doIt(){
-    // Close all dropdowns first
-    let allDropDowns = document.querySelectorAll('.dropdown');  // select all dropdowns
-    allDropDowns.forEach(menu => {
-        menu.style.display = 'none';  // Close all dropdowns
-    });
-    dropDown.style.display="block";
-    dropDown.style.display="visible";
-    /*dropDown=""; reset dropdown variable so nothing stays open after clicking something else //not necessary*/
+
+
+function doIt(thing){
+    dropDown=document.querySelector(thing); /* save dropdown in question into variable */
+   
+    if (dropDown.style.display == 'block') {
+        dropDown.style.display="none";
+        dropDown.style.display="hidden";
+        console.log("hid it");
+     }
+     else{
+        dropDown.style.display="block";
+        dropDown.style.display="visible";
+        console.log("displayed it");
+     }
+    
 }
-/* add event listener to trigger dropDown function */
-/* showMore.addEventListener("click",showDropDown(dropClass));  */
-
-
-
-/* AI insight on how to do the dropdown function above. still gives some errors */
-/* function showDropDown(event) { // Rename the parameter to 'event'
-    //Crucial change:  Get the selector string from a data attribute.
-    let dropDownSelector = event.currentTarget.dataset.target;
-
-
-    if (dropDownSelector) {
-        let dropDown = document.querySelector(dropDownSelector);
-        if (dropDown) { // Check if the element was found
-            dropDown.style.display = "block";
-            dropDown.style.visibility = "visible";
-        } else {
-            console.error("Element not found:", dropDownSelector);
-        }
-    } else {
-        console.error("Data attribute 'data-target' not found on the 'showMore' element.");
-    }
-
-}
-
-//Get the showMore element
-const showMore = document.querySelector("#showMore");
-
-//Crucial change: Add data-target to your showMore button (in your HTML)
-// Example: <button id="showMore" data-target="#myDropdown">Show More</button>
-//Replace #myDropdown with the actual ID of the element you want to show.
-
-if (showMore) {
-    showMore.addEventListener("click", showDropDown);
-} else {
-    console.error("Element with ID 'showMore' not found in the DOM.");
-}
- */
-
 
 
 
@@ -276,7 +245,7 @@ function darkTheme(){
 }
 function roseGoldTheme(){
     root.style.setProperty("--bodyColour","rgb(255, 208, 191)");
-    root.style.setProperty("--deepTheme","rgb(255, 180, 153)");
+    root.style.setProperty("--deepTheme","rgb(255, 150, 111)");
     root.style.setProperty("--lightTheme","rgb(255, 180, 153)");
     root.style.setProperty("--lightTextColour","white");
     root.style.setProperty("--deepTextColour","rgb(255, 137, 94)");
@@ -308,12 +277,12 @@ function saveTheme(){
 
 }
 function checkCookies(){
-    if (document.cookie=="5"){
+    if (document.cookie=="4"){
         changeTheme(localStorage.getItem("themeCount"));
     }
     else{
-        changeTheme(5);
-        localStorage.setItem("themeCount",5);
+        changeTheme(4);
+        localStorage.setItem("themeCount",4);
         document.cookie=localStorage.getItem("themeCount");
     }
 }
@@ -344,7 +313,7 @@ function updateHeads(){
 
     }
 }
-/* function to populate product categories page*/
+/* function to populate product categories page heading*/
 function checkThrough(){
     
     console.log("started and not cleared. See localStorage below");
