@@ -126,12 +126,23 @@ function doIt(thing){
 
 
 
+let desktopMenu=document.querySelector("#desktopMenu");
+const mobileMenu=document.querySelector("#mobileMenu");
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+    dropDown=document.querySelector(".dropdown")
+    if (e.target !== (mobileMenu) && !(mobileMenu).contains(e.target)) {
+        if(e.target !== (desktopMenu) && !(desktopMenu).contains(e.target)){
+            showDropDown(".dropdown");
+            hideDesktopMenu();
+            
+        }
+    }    
+}
 
 
 /* function to show desktop nav menu layout */
-const desktopMenu=document.querySelector("#desktopMenu");
-const mobileMenu=document.querySelector("#mobileMenu");
-
 function showDesktopMenu(){
     desktopMenu.style.display="flex";
     desktopMenu.style.visibility="visible";
