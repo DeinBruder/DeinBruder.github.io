@@ -134,8 +134,13 @@ window.onclick = function(e) {
     dropDown=document.querySelector(".dropdown")
     if (e.target !== (mobileMenu) && !(mobileMenu).contains(e.target)) {
         if(e.target !== (desktopMenu) && !(desktopMenu).contains(e.target)){
-            showDropDown(".dropdown");
-            hideDesktopMenu();
+            if (mediaQuery.matches){
+                showDropDown(".dropdown");
+                hideDesktopMenu();
+            }
+            
+            
+            
             
         }
     }    
