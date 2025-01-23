@@ -576,7 +576,7 @@ a{
 .servicesText{
     min-height: 100%;
     width: 50%;
-    text-wrap: wrap;
+    word-wrap:normal;
     padding: 0 0 0 10%;
     display: flex;
     flex-direction: column;
