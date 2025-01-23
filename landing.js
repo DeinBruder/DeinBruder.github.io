@@ -109,7 +109,7 @@ function showDropDown(thing){
 
 
 function doIt(thing){
-    dropDown=document.querySelector(thing); /* save dropdown in question into variable */
+    dropDown=document.querySelector(thing); // save dropdown in question into variable 
    
     if (dropDown.style.display == 'block') {
         dropDown.style.display="none";
@@ -119,7 +119,7 @@ function doIt(thing){
      else{
         dropDown.style.display="block";
         dropDown.style.display="visible";
-        console.log("displayed it");
+        console.log("displayed themes");
      }
     
 }
@@ -128,15 +128,19 @@ function doIt(thing){
 
 let desktopMenu=document.querySelector("#desktopMenu");
 const mobileMenu=document.querySelector("#mobileMenu");
+let navSVGs = document.querySelector("#navSVGs");
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function(e) {
     dropDown=document.querySelector(".dropdown")
-    if (e.target !== (mobileMenu) && !(mobileMenu).contains(e.target)) {
-        if(e.target !== (desktopMenu) && !(desktopMenu).contains(e.target)){
-            if (mediaQuery.matches){
-                showDropDown(".dropdown");
-                hideDesktopMenu();
+    if (mediaQuery.matches) {
+        if(e.target !== (mobileMenu) && !(mobileMenu).contains(e.target)){
+            if (e.target !== (desktopMenu) && !(desktopMenu).contains(e.target)){
+                if(e.target !== (navSVGs) && !(navSVGs).contains(e.target)){
+                    showDropDown(".dropdown");
+                    hideDesktopMenu();
+                }
+                
             }
             
             
