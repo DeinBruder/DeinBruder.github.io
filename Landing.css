@@ -547,7 +547,7 @@ a{
     flex-direction: row;
     align-items: flex-start;
     width: 75%;
-    height: 9em;
+    min-height: 9em;
     padding: 2em;
     word-wrap: break-word;
     transition: background-color 150ms ease-in, color 150ms ease-in;
