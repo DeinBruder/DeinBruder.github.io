@@ -352,7 +352,7 @@ function checkThrough(){
             final.push(lines[i]);
             console.log(lines[i]);
             middle.innerHTML+=`<a href = "productPage.html" class ="services" onclick = "fillIn(${lines[i].toLowerCase()})">
-                    <div><img class="icon" src="assets/clothes-svgrepo-com.svg" alt="Buy Clothes"></div>
+                    <div id="iconContainer"><img class="icon" src="assets/clothes-svgrepo-com.svg" alt="Buy Clothes"></div>
                     <div class="servicesText"><h2 class ="${lines[i]}">${lines[i]}</h2>
                     <p>We guarantee amazing quality at a <em>reasonably</em> cheap cost!</p>
                     </div>

@@ -469,7 +469,7 @@ a{
     font-weight: 4000px;
     height: 2em;
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 75%;
     transition: color 150ms ease-in, background-color 150ms ease-in,height 150ms ease-in; 
 } 
@@ -534,10 +534,11 @@ a{
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 9em;
 }
 .icon{
-    height:10vw;
-    width: 10vw;
+    height:100%;
+    width: 100%;
     background: var(--lightTheme);
     border-radius: 50%;
 }
@@ -546,7 +547,7 @@ a{
     flex-direction: row;
     align-items: flex-start;
     width: 75%;
-    height: fit-content;
+    height: 9em;
     padding: 2em;
     word-wrap: break-word;
     transition: background-color 150ms ease-in, color 150ms ease-in;
@@ -573,9 +574,14 @@ a{
     border-radius: 15px;
 }
 .servicesText{
-    max-width: 100%;
+    min-height: 100%;
+    width: 50%;
     text-wrap: wrap;
-    padding: 0 10%;
+    padding: 0 0 0 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
 }
 
 video{
@@ -747,9 +753,9 @@ footer{
         flex-direction: row;
         justify-content: center;
     }
-    #desktopMenu{/* 
+    #desktopMenu{
         display: none;
-        visibility: hidden; */
+        visibility: hidden;
         flex-direction: column;
         background-color:var(--deepTheme);
         position: absolute;
