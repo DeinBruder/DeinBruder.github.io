@@ -175,6 +175,7 @@ main{
     right: 0%;
     width: 20%;
     padding: 1em;
+    margin: 1em;
     border: none;
     background-color: var(--lightTheme);
     color: var(--lightTextColour);
@@ -715,7 +716,7 @@ footer{
 
 @media (max-width: 800px) {
     header{
-        min-height: auto;    
+        min-height: auto;
     }
     #header-img{
         margin:0px;
